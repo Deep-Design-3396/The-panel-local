@@ -1,0 +1,124 @@
+.navbar {
+    z-index: 999;
+}
+
+.navbar-brand img {
+    height: 60px;
+}
+
+.sticky {
+    position: fixed !important;
+    top: 0;
+    width: 100%;
+    background-color: #fff;
+}
+
+#navbarDropdown img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    border: 1px solid #3368BC;
+}
+
+.dropdown-menu {
+    border-radius: 0px;
+    padding: 0px;
+}
+
+.dropdown-menu .dropdown-item {
+    padding: 10px 20px;
+    font-size: 14px;
+}
+
+.dropdown-menu .dropdown-item i {
+    padding-right: 16px;
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+    color: #fff;
+    text-decoration: none;
+    background-color: #3368bc;
+}
+
+.dropdown-item:focus,
+.dropdown-item:hover {
+    color: #ffffff;
+    text-decoration: none;
+    background-color: #3368bc;
+}
+
+a {
+    color: var(--bs-Color-black);
+    text-decoration: none;
+}
+
+.nav-item .nav-link {
+    font-family: var(--bs-font-family-inter);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    color: var(--bs-Color-black);
+}
+
+.upgrad-plan-text {
+    color: var(--bs-Color-Gray);
+    font-family: var(--bs-font-family-nunito);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}
+
+.toggle {
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-menu-custom {
+    left: auto;
+    right: 0;
+    transform-origin: right;
+}
+
+.no-arrow::after {
+    display: none;
+}
+
+
+
+@media (max-width: 991.98px) {
+    .toggle {
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .navbar-toggler:focus {
+        box-shadow: none;
+    }
+}
+
+.custom-button-login {
+    border-color: #143B64 !important;
+    border-radius: 4px !important;
+    color: #143B64 !important;
+    outline: none !important;
+    box-shadow: none !important;
+    width: 90px;
+}
+
+.custom-button-login:hover {
+    border-color: #143B64;
+    background-color: #143B64 !important;
+    color: white !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.custom-button-register {
+    background-color: #143B64 !important;
+    border-radius: 4px !important;
+    color: white !important;
+    box-shadow: none !important;
+}

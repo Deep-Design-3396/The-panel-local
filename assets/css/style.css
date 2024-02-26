@@ -1,0 +1,103 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('./variable.css');
+@import url('./footer.component.css');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+body {
+  font-family: "Inter", sans-serif !important;
+  background-color: #edf5fc !important;
+  color: #444444;
+}
+
+/* buttom to back top */
+/* #myBtn {
+  display: none;
+  position: fixed;
+  bottom: 14px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  color: white;
+  background: #143B64;
+  cursor: pointer;
+  padding: 7px 15px;
+  transition: all 0.8s;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  border: 1px solid #fff;
+  background: #6776f4;
+  color: #fff;
+} */
+
+/* @media only screen and (max-width: 479px) {
+  #myBtn {
+    bottom: 10px;
+    right: 10px;
+  }
+} */
+
+section{
+  margin-bottom: 30px;
+}
+
+.owl-nav button {
+  color: #FFF !important;
+  font-size: 14px !important;
+  margin: 5px !important;
+  padding: 4px 7px !important;
+  background: #D6D6D6 !important;
+  display: inline-block !important;
+  cursor: pointer !important;
+  border-radius: 3px !important;
+}
+
+.owl-carousel-3 .post-description p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  line-height: 2;
+}
+
+.client-description {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+.owl-nav {
+  text-align: end;
+}
+
+.blog-description p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+  }
+}

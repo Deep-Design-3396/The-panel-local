@@ -1,0 +1,91 @@
+.gallerypteaca {
+    padding-top: 50px;
+}
+
+.Contactmainsection {
+    margin: 50px 0 180px 0;
+}
+
+.ptecademicmain p {
+    line-height: 1.6;
+    text-align: justify;
+}
+
+section {
+    background: #EDF4FD;
+    font-family: var(--bs-font-family-nunito);
+    text-transform: capitalize;
+}
+
+.section-heading {
+    color: var(--Dark-Blue, #143B64) !important;
+    text-transform: capitalize;
+}
+
+.section-heading h3 {
+    color: #1A2639;
+    font-family: 'Helvetica', sans-serif;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: capitalize;
+}
+
+.section-heading h4 {
+    color: #000;
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 22px;
+}
+
+.section-heading p,
+ul {
+    text-align: left;
+}
+
+.sub-heading-text {
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.section-heading .heading-text {
+    text-align: center;
+    font-size: 24px !important;
+    font-weight: 400 !important;
+}
+
+.privacy-policy li {
+    color: var(--Text-color, #3E4A61);
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+}
+
+.privacy-policy li a {
+    text-transform: lowercase;
+    text-decoration: underline !important;
+    color: var(--Text-color, #3E4A61);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px;
+}
+
+@media only screen and (max-width: 479px) {
+    .section-heading h3 {
+        font-size: 30px;
+    }
+
+    .section-heading .heading-text {
+        font-size: 18px !important;
+    }
+
+    .section-heading p {
+        font-size: 14px;
+    }
+}

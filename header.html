@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./assets/css/header.component.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg loading-placeholder" style="height: 86px;">
+        <div class="container">
+            <div class="toggle">
+                <a class="navbar-brand pointer" href="index.html">
+                    <img src="" class="img-fluid Header-logo" alt="Logo" />
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 16 16">
+                        <path fill="currentColor" fill-rule="evenodd"
+                            d="M1.25 3.25A.75.75 0 0 1 2 2.5h12A.75.75 0 0 1 14 4H2a.75.75 0 0 1-.75-.75m0 4.75A.75.75 0 0 1 2 7.25h12a.75.75 0 0 1 0 1.5H2A.75.75 0 0 1 1.25 8M2 12a.75.75 0 0 0 0 1.5h12a.75.75 0 0 0 0-1.5z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse flex-grow-0" id="navbarSupportedContent">
+                <ul class="navbar-nav me-2 mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">
+                            Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./about.html">
+                            About
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./blog.html">
+                            Blog
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./contact.html">
+                            Contact
+                        </a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <a href="https://dev-app.thepanelau.com/user/dashboard" id="goToAppButton"
+                        class="btn custom-button-register btn-md me-3" style="display: none;">Dashboard</a>
+                    <a href="https://dev-app.thepanelau.com/login" id="loginButton"
+                        class="btn custom-button-login btn-md me-3">Login</a>
+                    <a href="https://dev-app.thepanelau.com/register" id="registerButton"
+                        class="btn custom-button-register btn-md">Register</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        const cookies = document.cookie.split(';');
+        const token = cookies.find(cookie => cookie.trim().startsWith('authToken='));
+        const tokenValue = token ? token.split('=')[1] : null;
+        const goToAppButton = document.getElementById("goToAppButton");
+        const loginButton = document.getElementById("loginButton");
+        const registerButton = document.getElementById("registerButton");
+
+        if (tokenValue) {
+            goToAppButton.style.display = "inline-block";
+            loginButton.style.display = "none";
+            registerButton.style.display = "none";
+        } else {
+            goToAppButton.style.display = "none";
+            loginButton.style.display = "inline-block";
+            registerButton.style.display = "inline-block";
+        }
+    </script>
+    <script src="./assets/js/globals.js"></script>
+</body>
+
+</html>

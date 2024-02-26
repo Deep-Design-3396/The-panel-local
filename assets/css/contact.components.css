@@ -1,0 +1,121 @@
+body {
+    background-color: #EDF4FD;
+}
+
+.contantformsection textarea {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    border: 1px solid #B0B3B9;
+    border-radius: 0;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.contantformsection input {
+    outline: none;
+    margin-bottom: 30px;
+    box-shadow: none;
+}
+
+.contantformsectiont input:focus {
+    box-shadow: none;
+}
+
+.contantformsection .remember-me--forget-password {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contantformsection .remember-me--forget-password input {
+    margin: 0;
+    margin-right: 7px;
+    width: auto;
+}
+
+.remember-me--forget-password a {
+    text-decoration: none;
+}
+
+.contantformsection .btn-login {
+    color: #fff;
+    font-size: 16px;
+    padding: 12px 35px;
+    border-radius: 50px;
+    display: inline-block;
+    border: 0;
+    outline: 0;
+    box-shadow: 0 3px 6px 1px #e2f3eb;
+    width: 100%;
+    background: #3368bc;
+    margin: 30px 0;
+}
+
+.contantformsection h5 {
+    font-size: 30px;
+    color: #3368bc;
+    margin-bottom: 20px;
+}
+
+.contact-section h3 {
+    color: var(--Dark-Blue, #143B64);
+    text-align: center !important;
+    font-family: var(--bs-font-family-nunito);
+    font-size: 34px;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.contact-form {
+    background: #FFF;
+    padding: 30px;
+    min-height: 560px;
+}
+
+.join-button {
+    border-radius: 4px !important;
+    background: var(--Dark-Blue, #143B64) !important;
+    padding: 0px 0px 0px 15px;
+}
+
+.contact-form ul {
+    padding-left: 0px;
+}
+
+.contact-form ul li {
+    border-bottom: 1px solid #E2E8F0;
+    padding: 15px;
+    list-style: none;
+}
+
+.contact-form ul li .fa {
+    margin-right: 15px;
+    font-size: 24px;
+}
+
+.contact-form ul li a {
+    color: #414D55;
+    font-family: var(--bs-font-family-nunito);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+@media only screen and (max-width: 479px) {
+    .address-section li {
+        display: flex;
+        align-items: center;
+    }
+
+    .address-section a {
+        font-size: 12px;
+    }
+}
+
+.contact-textarea {
+    width: 100%;
+    padding: 15px;
+}

@@ -1,0 +1,797 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Fav-icon -->
+    <link rel="icon" href="./assets/img/Favicon.png">
+
+    <link rel="preconnect" href="https://dev-app.thepanelau.com" crossorigin>
+    <link rel="preconnect" href="https://www.facebook.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.18.3/dist/css/uikit.min.css" />
+
+    <!-- Title -->
+    <title>The Panel</title>
+
+    <style>
+        .loading-placeholder {
+            background-color: #f0f0f0;
+            animation: pulse 1.5s infinite;
+
+            @keyframes pulse {
+                0% {
+                    opacity: 0.6;
+                }
+
+                50% {
+                    opacity: 1;
+                }
+
+                100% {
+                    opacity: 0.6;
+                }
+            }
+        }
+
+        .loader {
+            position: fixed;
+            left: calc(50% - 15px);
+            top: calc(50% - 15px);
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #3498db;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 2s linear infinite;
+            z-index: 9999;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .hidden {
+            display: none;
+        }
+
+
+        .custom-button-login {
+            border-color: #143B64 !important;
+            border-radius: 4px !important;
+            color: #143B64 !important;
+            outline: none !important;
+            box-shadow: none !important;
+            width: 90px;
+        }
+
+        .custom-button-login:hover {
+            border-color: #143B64;
+            background-color: #143B64 !important;
+            color: white !important;
+            outline: none !important;
+            box-shadow: none !important;
+        }
+
+        .custom-button-register {
+            background-color: #143B64 !important;
+            border-radius: 4px !important;
+            color: white !important;
+            box-shadow: none !important;
+        }
+    </style>
+
+    <noscript>
+        <link rel="stylesheet" href="./assets/css/home.component.css" as="style">
+        <link rel="stylesheet" href="./assets/css/owl/owl.carousel.min.css">
+        <link rel="stylesheet" href="./assets/css/header.component.css">
+    </noscript>
+
+    <!-- Defer Loading Non-Critical CSS -->
+    <script>
+        // Load non-critical CSS files after the initial page load
+        window.addEventListener('load', function () {
+            var links = [
+                './assets/css/style.css',
+                './assets/css/home.component.css',
+                './assets/css/owl/owl.carousel.min.css',
+                './assets/css/header.component.css',
+            ];
+            links.forEach(function (href) {
+                var link = document.createElement('link');
+                link.rel = 'stylesheet';
+                link.href = href;
+                document.head.appendChild(link);
+            });
+        });
+    </script>
+
+    <!-- Meta Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '922036329322575');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+            src=https://www.facebook.com/tr?id=922036329322575&ev=PageView&noscript=1 /></noscript>
+    <!-- End Meta Pixel Code -->
+</head>
+
+<body>
+    <!-- <div class="fb-customerchat" attribution="setup_tool" page_id="253615734494377" theme_color="#0084FF"></div> -->
+
+    <!-- Messenger Chat Plugin Code -->
+    <div id="fb-root"></div>
+
+    <!-- Your Chat Plugin code -->
+    <div id="fb-customer-chat" class="fb-customerchat"></div>
+    
+    <div id="loader" class="loader"></div>
+
+    <div id="content" class="hidden">
+
+        <!-- Header -->
+        <nav class="navbar navbar-expand-lg loading-placeholder" style="height: 86px;">
+            <div class="container">
+                <div class="toggle">
+                    <a class="navbar-brand pointer" href="index.html">
+                        <img src="" class="img-fluid Header-logo" alt="Logo" />
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 16 16">
+                            <path fill="currentColor" fill-rule="evenodd"
+                                d="M1.25 3.25A.75.75 0 0 1 2 2.5h12A.75.75 0 0 1 14 4H2a.75.75 0 0 1-.75-.75m0 4.75A.75.75 0 0 1 2 7.25h12a.75.75 0 0 1 0 1.5H2A.75.75 0 0 1 1.25 8M2 12a.75.75 0 0 0 0 1.5h12a.75.75 0 0 0 0-1.5z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse flex-grow-0" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-2 mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">
+                                Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./about.html">
+                                About
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./blog.html">
+                                Blog
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./contact.html">
+                                Contact
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="d-flex">
+                        <a href="https://dev-app.thepanelau.com/user/dashboard" id="goToAppButton"
+                            class="btn custom-button-register btn-md me-3" style="display: none;">Dashboard</a>
+                        <a href="https://dev-app.thepanelau.com/login" id="loginButton"
+                            class="btn custom-button-login btn-md me-3">Login</a>
+                        <a href="https://dev-app.thepanelau.com/register" id="registerButton"
+                            class="btn custom-button-register btn-md">Register</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- <div id="header" class="loading-placeholder"></div> -->
+
+        <!-- Banner section -->
+        <section class="hero-banner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div id="Header-title">
+                        </div>
+                        <a href="./contact.html">
+                            <button class="hero-contact-button mt-2">
+                                Contact us
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"
+                                    fill="none">
+                                    <path d="M7 2L16 11L7 20" stroke="white" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                        </a>
+
+                        <div class="hero-banner-card d-flex align-items-center justify-content-center p-3">
+                            <div class="icon-bg me-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28"
+                                    fill="none">
+                                    <g clip-path="url(#clip0_1325_712)">
+                                        <path
+                                            d="M7.12474 0.25C6.5823 0.25 6.14258 0.68972 6.14258 1.23216V3.19643H8.10685V1.23216C8.10685 0.68972 7.66713 0.25 7.12474 0.25Z"
+                                            fill="white" />
+                                        <path
+                                            d="M20.8747 0.25C20.3323 0.25 19.8926 0.68972 19.8926 1.23216V3.19643H21.8568V1.23216C21.8569 0.68972 21.4172 0.25 20.8747 0.25Z"
+                                            fill="white" />
+                                        <path
+                                            d="M24.8036 3.19641H21.8571V7.125C21.8571 7.66744 21.4174 8.10716 20.875 8.10716C20.3325 8.10716 19.8928 7.66744 19.8928 7.125V3.19641H8.10712V7.125C8.10712 7.66744 7.6674 8.10716 7.12496 8.10716C6.58252 8.10716 6.1428 7.66744 6.1428 7.125V3.19641H3.19643C1.56916 3.19641 0.25 4.51557 0.25 6.14284V24.8036C0.25 26.4308 1.56916 27.75 3.19643 27.75H24.8036C26.4308 27.75 27.75 26.4308 27.75 24.8036V6.14284C27.75 4.51557 26.4308 3.19641 24.8036 3.19641ZM25.7857 24.8036C25.7857 25.346 25.346 25.7857 24.8035 25.7857H3.19643C2.65399 25.7857 2.21427 25.346 2.21427 24.8036V12.0357H25.7857V24.8036Z"
+                                            fill="white" />
+                                        <path
+                                            d="M8.10659 14H6.14232C5.59988 14 5.16016 14.4397 5.16016 14.9822C5.16016 15.5246 5.59988 15.9643 6.14232 15.9643H8.10659C8.64903 15.9643 9.08875 15.5246 9.08875 14.9822C9.08875 14.4397 8.64903 14 8.10659 14Z"
+                                            fill="white" />
+                                        <path
+                                            d="M14.9816 14H13.0173C12.4749 14 12.0352 14.4397 12.0352 14.9822C12.0352 15.5246 12.4749 15.9643 13.0173 15.9643H14.9816C15.524 15.9643 15.9638 15.5246 15.9638 14.9822C15.9638 14.4397 15.524 14 14.9816 14Z"
+                                            fill="white" />
+                                        <path
+                                            d="M21.8566 14H19.8923C19.3499 14 18.9102 14.4397 18.9102 14.9822C18.9102 15.5246 19.3499 15.9643 19.8923 15.9643H21.8566C22.399 15.9643 22.8387 15.5246 22.8387 14.9822C22.8387 14.4397 22.399 14 21.8566 14Z"
+                                            fill="white" />
+                                        <path
+                                            d="M8.10659 17.9286H6.14232C5.59988 17.9286 5.16016 18.3683 5.16016 18.9108C5.16016 19.4532 5.59988 19.8929 6.14232 19.8929H8.10659C8.64903 19.8929 9.08875 19.4532 9.08875 18.9108C9.08875 18.3683 8.64903 17.9286 8.10659 17.9286Z"
+                                            fill="white" />
+                                        <path
+                                            d="M14.9816 17.9286H13.0173C12.4749 17.9286 12.0352 18.3683 12.0352 18.9108C12.0352 19.4532 12.4749 19.8929 13.0173 19.8929H14.9816C15.524 19.8929 15.9638 19.4532 15.9638 18.9108C15.9638 18.3683 15.524 17.9286 14.9816 17.9286Z"
+                                            fill="white" />
+                                        <path
+                                            d="M21.8566 17.9286H19.8923C19.3499 17.9286 18.9102 18.3683 18.9102 18.9108C18.9102 19.4532 19.3499 19.8929 19.8923 19.8929H21.8566C22.399 19.8929 22.8387 19.4532 22.8387 18.9108C22.8387 18.3683 22.399 17.9286 21.8566 17.9286Z"
+                                            fill="white" />
+                                        <path
+                                            d="M8.10659 21.8571H6.14232C5.59988 21.8571 5.16016 22.2968 5.16016 22.8393C5.16016 23.3817 5.59988 23.8214 6.14232 23.8214H8.10659C8.64903 23.8214 9.08875 23.3817 9.08875 22.8392C9.08875 22.2968 8.64903 21.8571 8.10659 21.8571Z"
+                                            fill="white" />
+                                        <path
+                                            d="M14.9816 21.8571H13.0173C12.4749 21.8571 12.0352 22.2968 12.0352 22.8393C12.0352 23.3817 12.4749 23.8214 13.0173 23.8214H14.9816C15.524 23.8214 15.9638 23.3817 15.9638 22.8393C15.9638 22.2968 15.524 21.8571 14.9816 21.8571Z"
+                                            fill="white" />
+                                        <path
+                                            d="M21.8566 21.8571H19.8923C19.3499 21.8571 18.9102 22.2968 18.9102 22.8393C18.9102 23.3817 19.3499 23.8214 19.8923 23.8214H21.8566C22.399 23.8214 22.8387 23.3817 22.8387 22.8393C22.8387 22.2968 22.399 21.8571 21.8566 21.8571Z"
+                                            fill="white" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_1325_712">
+                                            <rect width="27.5" height="27.5" fill="white"
+                                                transform="translate(0.25 0.25)" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>
+                            </div>
+                            <div>
+                                <h5 class="m-1">250k</h5>
+                                <p class="m-0">Assisted Student</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <img src="./assets/img/hero-mockup.webp" class="img-fluid Hero-Mockup" alt="Hero Mockup"
+                            height="310">
+
+                        <div class="hero-class-join-card d-flex justify-content-center p-3">
+                            <div class="position-relative me-3">
+                                <img src="./assets/img/class-time.png" width="100" height="100">
+                                <!-- <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 15 15"
+                                    fill="none">
+                                    <circle cx="7.40996" cy="7.17949" r="6.17949" fill="#2EBB5E" stroke="#FBECD7"
+                                        stroke-width="2" />
+                                </svg> -->
+                            </div>
+                            <div>
+                                <h5 class="mb-3">PTE Academic Class</h5>
+                                <!-- <a href="https://dev-app.thepanelau.com/register" class="custom-button-join">Class Schedule</a> -->
+                                <button type="button" onclick="timetable()" class="custom-button-join"
+                                    data-bs-toggle="modal" data-bs-target="#class-schedule-modal">
+                                    Class Schedule
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- product section -->
+        <section>
+            <div class="container">
+                <div class="section-heading">
+                    <h3 class="mb-0">Products</h3>
+                    <p>The best online PTE Academic training to help you succeeded.</p>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-sm-12">
+                        <a href="./pteacademic.html">
+                            <div class="product-card mb-3">
+                                <div class="product-img">
+                                    <img src="./assets/img/education.webp" alt="pro1">
+                                </div>
+                                <div>
+                                    <h4>PTE Academic</h4>
+                                    <p id="pte-academic" class="loading-placeholder">
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-6 col-sm-12">
+                        <a href="./NAATI-CCL.html">
+                            <div class="product-card">
+                                <div class="product-img">
+                                    <img src="./assets/img/partners.webp" alt="pro1">
+                                </div>
+                                <div>
+                                    <h4>NAATI CCL</h4>
+                                    <p id="naati-ccl" class="loading-placeholder">
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- service section -->
+        <section>
+            <div class="container">
+                <div class="section-heading">
+                    <h3>Our Services</h3>
+                    <p>Join the thousands of aspiring professionals who have trusted us to achieve their Australian
+                        dream
+                        through PTE Academic.</p>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-sm-12">
+                        <div class="w-100 service-cards">
+                            <img src="./assets/img/teacher.webp" alt="service">
+                            <h3>Expert Teachers</h3>
+                            <p>We have well qualified staff who knows in which area they have to help students to
+                                achieve
+                                their desired scores.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-12">
+                        <div class="w-100 service-cards">
+                            <img src="./assets/img/creative.webp" alt="service">
+                            <h3>Creative Techniques</h3>
+                            <p>From more than 5 years we have been learning about PTE and NAATI-CCL exams, and we have
+                                gained the experience to deliver our efforts in best way.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-12">
+                        <div class="w-100 service-cards">
+                            <img src="./assets/img/success.webp" alt="service">
+                            <h3>High Success Rate</h3>
+                            <p>With the help of our experienced teachers we have achived 100% success rate. Students are
+                                getting their desired scores in very quick and easy manner.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-12">
+                        <div class="w-100 service-cards">
+                            <img src="./assets/img/tip.webp" alt="service">
+                            <h3>Tips and Tricks</h3>
+                            <p>We provide coaching with the latest PTE and NAATI-CCL material, and best tips and tricks.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-12">
+                        <div class="w-100 service-cards">
+                            <img src="./assets/img/sessions.webp" alt="service">
+                            <h3>Personalised Sessions</h3>
+                            <p>Best One on One sessions is the key to high success rate. We interact with individual
+                                students on daily basis.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-12">
+                        <div class="w-100 service-cards">
+                            <img src="./assets/img/support.webp" alt="service">
+                            <h3>24/7 Feedback and Support</h3>
+                            <p>We provide best support to our students for PTE, NAATI-CCL and other consultations. We
+                                have
+                                dedicated people to provide support to our students.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Wall of Fame -->
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="section-heading mb-5">
+                        <h3>Wall of Fame</h3>
+                        <p>Meet our champions who have made it in the PTE / NAATI CCL exam.</p>
+                    </div>
+                    <div class="owl-carousel Wall-of-Fame owl-loaded">
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PTE tool section -->
+        <section>
+            <div class="container">
+                <div class="section-heading mb-5">
+                    <h3>PTE tool will help you</h3>
+                    <p>WHAT'S IN IT FOR YOU?</p>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-lg-6 col-sm-12">
+                        <div class="tool-img">
+                            <img src="./assets/img/tool1.webp" alt="PTE">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-sm-12 center-content">
+                        <div class="tool-conent">
+                            <h3>Practice with repeated PTE questions</h3>
+                            <p class="pte-tool-content-1"></p>
+                            <a href="./contact.html" class="btn btn-primary contact-button">Contact us</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-lg-6 col-sm-12 center-content">
+                        <div class="tool-conent">
+                            <h3>Access yourself with Practice Tests</h3>
+                            <p class="pte-tool-content-2"></p>
+                            <a href="./contact.html" class="btn btn-primary contact-button">Contact us</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-sm-12 order-first order-md-1">
+                        <div class="tool-img">
+                            <img src="./assets/img/tool2.webp" alt="PTE">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-lg-6 col-sm-12">
+                        <div class="tool-img">
+                            <img src="./assets/img/tool3.webp" alt="PTE">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-sm-12 center-content">
+                        <div class="tool-conent">
+                            <h3>Self-study with AI scoring</h3>
+                            <p class="pte-tool-content-3"></p>
+                            <a href="./contact.html" class="btn btn-primary contact-button">Contact us</a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row mb-3">
+                    <div class="col-lg-6 col-sm-12 center-content">
+                        <div class="tool-conent">
+                            <h3>Where can I take my test? How much does it cost?</h3>
+                            <p class="pte-tool-content-4"></p>
+                            <a href="./contact.html" class="btn btn-primary contact-button">Contact us</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-sm-12 order-first order-md-1">
+                        <div class="tool-img">
+                            <img src="./assets/img/tool4.webp" alt="PTE">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- update section -->
+        <section>
+            <div class="container">
+                <div class="section-heading">
+                    <h3>Updates</h3>
+                    <p>WHAT'S IN IT FOR YOU?</p>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-sm-12 text-center">
+                        <img class="w-100" src="./assets/img/update.webp" alt="updates">
+                    </div>
+                    <div class="col-lg-8 col-sm-12">
+                        <ul class="nav nav-tabs update-tabs" id="myTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link active" id="tab1-tab" data-bs-toggle="tab" href="#tab1" role="tab"
+                                    aria-controls="tab1" aria-selected="true">Speaking</a>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link" id="tab2-tab" data-bs-toggle="tab" href="#tab2" role="tab"
+                                    aria-controls="tab2" aria-selected="true">Listening</a>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link" id="tab3-tab" data-bs-toggle="tab" href="#tab3" role="tab"
+                                    aria-controls="tab3" aria-selected="true">Writing</a>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <a class="nav-link" id="tab4-tab" data-bs-toggle="tab" href="#tab4" role="tab"
+                                    aria-controls="tab4" aria-selected="true">Reading</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active updates-speaking" id="tab1" role="tabpanel"
+                                aria-labelledby="tab1-tab"></div>
+                            <div class="tab-pane fade show updates-listening" id="tab2" role="tabpanel"
+                                aria-labelledby="tab2-tab"></div>
+                            <div class="tab-pane fade show updates-writing" id="tab3" role="tabpanel"
+                                aria-labelledby="tab3-tab"></div>
+                            <div class="tab-pane fade show updates-reading" id="tab4" role="tabpanel"
+                                aria-labelledby="tab4-tab"></div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+        <!-- our client  -->
+        <section>
+            <div class="container">
+                <div class="section-heading mb-5">
+                    <h3>What our students say</h3>
+                    <p>Feedback From Our Students</p>
+                </div>
+                <div class="owl-carousel owl-carousel-2" id="clientContainer">
+                    <div class="item">
+                        <div class="card-client">
+                            <div class="client-img">
+                                <img src="" class="card-img-top client-image" alt="client" />
+                            </div>
+                            <div class="card-client-header">
+                                <div>
+                                    <h4 class="Student-Name"></h4>
+                                </div>
+                                <div>
+                                    <img src="./assets/img/quote.svg" alt="quote">
+                                </div>
+                            </div>
+                            <div class="client-description">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="card-client">
+                            <div class="client-img">
+                                <img src="" class="card-img-top client-image" alt="client" />
+                            </div>
+                            <div class="card-client-header">
+                                <div>
+                                    <h4 class="Student-Name"></h4>
+                                </div>
+                                <div>
+                                    <img src="./assets/img/quote.svg" alt="quote">
+                                </div>
+                            </div>
+                            <div class="client-description">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="card-client">
+                            <div class="client-img">
+                                <img src="" class="card-img-top client-image" alt="client" />
+                            </div>
+                            <div class="card-client-header">
+                                <div>
+                                    <h4 class="Student-Name"></h4>
+                                </div>
+                                <div>
+                                    <img src="./assets/img/quote.svg" alt="quote">
+                                </div>
+                            </div>
+                            <div class="client-description">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Add more carousel items as needed -->
+                </div>
+            </div>
+        </section>
+
+        <!--live-class-schedule section  -->
+        <section>
+            <div class="container">
+                <div class="section-heading mb-3">
+                    <h3>Live Class Schedule</h3>
+                    <p>Start FREE TRAIL TO Access Live Classes</p>
+                </div>
+                <div class="row live-class-schedule">
+                    <div class="col-md-12">
+                        <div class="scroll-table">
+                            <table class="table table-borderless live-classs-table">
+                                <tbody id="live-class-table-body">
+                                    <!-- Table body will be dynamically populated here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center mt-4">
+                    <a href="./register.html">
+                        <button class="btn custom-button-register btn-md">Join our classes</button>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!--PTE-acedamic-teacher section  -->
+        <section class="mt-5 live-class-schedule">
+            <div class="container">
+                <div class="section-heading mb-5">
+                    <h3>Meet Your PTE Acedamic Teachers</h3>
+                </div>
+                <div class="row justify-content-center teacher-content">
+                    <div class="teacher-section col-sm-12 col-lg-5">
+                        <img src="./assets/img/teacher-1.webp" alt="teacher" height="88" width="88">
+                        <div class="ps-3">
+                            <h5 class="teacher-title">Dr. Ravneet Kaur</h5>
+                            <p class="teacher-subtitle">BA, Dip Ed, Cert TEFL, Master of TESOL</p>
+                        </div>
+                    </div>
+                    <div class="teacher-section col-sm-12 col-lg-5">
+                        <img src="./assets/img/teacher-2.webp" alt="teacher" height="88" width="88">
+                        <div class="ps-3">
+                            <h5 class="teacher-title">Kacy Abo</h5>
+                            <p class="teacher-subtitle">BA, CELTA</p>
+                        </div>
+                    </div>
+                    <div class="teacher-section col-sm-12 col-lg-5">
+                        <img src="./assets/img/teacher-3.webp" alt="teacher" height="88" width="88">
+                        <div class="ps-3">
+                            <h5 class="teacher-title">Sasha from Australia</h5>
+                            <p class="teacher-subtitle">BA, CELTA, Master of Applied Linguistics</p>
+                        </div>
+                    </div>
+                    <div class="teacher-section col-sm-12 col-lg-5">
+                        <img src="./assets/img/teacher-4.webp" alt="teacher" height="88" width="88">
+                        <div class="ps-3">
+                            <h5 class="teacher-title">Anna from Brazil</h5>
+                            <p class="teacher-subtitle">Master of Arts, PhD in Applied Linguistics</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- blog section -->
+        <section>
+            <div class="container">
+                <div class="section-heading">
+                    <h3>Latest Blog</h3>
+                    <p>Guidance and understanding of PTE, CD-IELTS, Duolingo & CELPIP</p>
+                </div>
+                <div class="owl-carousel Blog-Owl-Slider owl-loaded">
+
+                </div>
+            </div>
+        </section>
+
+        <div id="fullScreenCarousel" class="owl-carousel full-screen-carousel" style="display:none;">
+            <!-- Full-screen carousel content will be dynamically added here -->
+        </div>
+
+        <!-- Footer -->
+        <div id="mainfooter"></div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="class-schedule-modal" tabindex="-1" aria-labelledby="class-schedule-modal-Label"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="class-schedule-modal-Label">Class Schedule</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table table-borderless live-classs-table mb-0">
+                            <tbody id="live-class-table-body-modal">
+                                <!-- Table body will be dynamically populated here -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        const cookies = document.cookie.split(';');
+        const token = cookies.find(cookie => cookie.trim().startsWith('authToken='));
+        const tokenValue = token ? token.split('=')[1] : null;
+        const goToAppButton = document.getElementById("goToAppButton");
+        const loginButton = document.getElementById("loginButton");
+        const registerButton = document.getElementById("registerButton");
+
+        if (tokenValue) {
+            goToAppButton.style.display = "inline-block";
+            loginButton.style.display = "none";
+            registerButton.style.display = "none";
+        } else {
+            goToAppButton.style.display = "none";
+            loginButton.style.display = "inline-block";
+            registerButton.style.display = "inline-block";
+        }
+    </script>
+
+    <!-- 
+    <script>
+        window.fbAsyncInit = function () {
+            FB.init({
+                xfbml: true,
+                version: 'v11.0'
+            });
+        };
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script> -->
+
+    <script>
+        var chatbox = document.getElementById('fb-customer-chat');
+        chatbox.setAttribute("page_id", "102611421542857");
+        chatbox.setAttribute("attribution", "biz_inbox");
+
+        window.fbAsyncInit = function () {
+            FB.init({
+                xfbml: true,
+                version: 'v11.0'
+            });
+        };
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+    <!-- jQuery -->
+    <script src="./assets/js/jquery-3.6.0.min.js" defer></script>
+
+    <!-- Owl Carousel JavaScript -->
+    <script src="./assets/js/owl/owl.carousel.min.js" defer></script>
+
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.18.3/dist/js/uikit.min.js"></script>
+
+    <!-- Local Js File -->
+    <script src="./assets/js/loader.js" defer></script>
+    <script src="./assets/js/globals.js"></script>
+    <script src="./assets/js/main.js" defer></script>
+    <script src="./assets/js/index.js" defer></script>
+    <script src="./assets/js/blog-slider-script.js" defer></script>
+
+</body>
+
+</html>
